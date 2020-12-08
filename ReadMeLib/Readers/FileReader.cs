@@ -28,5 +28,15 @@ namespace ReadMeLib.Readers {
                 }
             }
         }
+
+        /// <summary>
+        /// Reading text from xml file but read file as string
+        /// </summary>
+        public override void ReadXml() {
+            // Check if particular file exist
+            if(File.Exists(Path)) {
+                ReadTxt();
+            }
+        }
     }
 }

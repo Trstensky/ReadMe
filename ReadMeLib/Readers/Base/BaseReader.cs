@@ -25,5 +25,10 @@
         /// Reading file type txt with file modes and file roles
         /// </summary>
         public abstract void ReadTxt();
+
+        /// <summary>
+        /// Reading file type xml with file modes and file roles
+        /// </summary>
+        public abstract void ReadXml();
     }
 }
