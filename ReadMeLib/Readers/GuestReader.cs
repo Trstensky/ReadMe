@@ -2,6 +2,9 @@
 using System.IO;
 using System.Xml;
 using System.Linq;
+using ReadMeLib.Model;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
 
 namespace ReadMeLib.Readers {
     /// <summary>
@@ -48,6 +51,20 @@ namespace ReadMeLib.Readers {
         /// Guest reading one json item
         /// </summary>
         public override void ReadJson() {
+            try {
+                JavaScriptSerializer jss = new JavaScriptSerializer();
+                var items = jss.Deserialize<List<Student>>(Text);
+                var join = "";
+                for(var i = 0; i < items.Count; i++) {
+                    join += "RollNo is: " + items[i].RollNo + "\n";
+                    join += "Name is: " + items[i].Name + "\n";
+                    join += "Marks is: " + items[i].Marks + "\n\n";
+                    i = items.Count;
+                }
+                Text = join;
+            } catch {
+                Text = "Json string is not in correct format!";
+            }
         }
     }
 }
