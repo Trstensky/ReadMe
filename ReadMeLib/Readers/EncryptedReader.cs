@@ -1,5 +1,6 @@
 ﻿using ReadMeLib.Readers.Base;
 using System;
+using System.Linq;
 using System.Text;
 
 namespace ReadMeLib.Readers {
@@ -42,6 +43,11 @@ namespace ReadMeLib.Readers {
         /// Encrypt json text from reversed string to string
         /// </summary>
         public override void ReadJson() {
+            try {
+                Text = new string(Text.Reverse().ToArray());
+            } catch {
+                Text = "Reversed string is not valid!";
+            }
         }
     }
 }
