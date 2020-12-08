@@ -39,5 +39,11 @@ namespace ReadMeLib.Readers {
                 Text = "Xml string is not in correct format!";
             }
         }
+
+        /// <summary>
+        /// Admin reading all json string
+        /// </summary>
+        public override void ReadJson() {
+        }
     }
 }

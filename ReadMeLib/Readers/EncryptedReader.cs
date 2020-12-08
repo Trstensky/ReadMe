@@ -37,5 +37,11 @@ namespace ReadMeLib.Readers {
                 Text = Encoding.UTF8.GetString(bytes);
             } catch { Text = "Hex string is not valid!"; }
         }
+
+        /// <summary>
+        /// Encrypt json text from reversed string to string
+        /// </summary>
+        public override void ReadJson() {
+        }
     }
 }

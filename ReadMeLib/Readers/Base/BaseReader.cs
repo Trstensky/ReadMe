@@ -30,5 +30,10 @@
         /// Reading file type xml with file modes and file roles
         /// </summary>
         public abstract void ReadXml();
+
+        /// <summary>
+        /// Reading file type json with file modes and file roles
+        /// </summary>
+        public abstract void ReadJson();
     }
 }

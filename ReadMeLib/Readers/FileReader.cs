@@ -38,5 +38,15 @@ namespace ReadMeLib.Readers {
                 ReadTxt();
             }
         }
+
+        /// <summary>
+        /// Reading text from json file but read file as string
+        /// </summary>
+        public override void ReadJson() {
+            // Check if particular file exist
+            if(File.Exists(Path)) {
+                ReadTxt();
+            }
+        }
     }
 }
