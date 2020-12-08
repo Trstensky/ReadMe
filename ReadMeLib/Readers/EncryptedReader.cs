@@ -29,6 +29,13 @@ namespace ReadMeLib.Readers {
         /// Encrypt xml text from hex to string
         /// </summary>
         public override void ReadXml() {
+            try {
+                var bytes = new byte[Text.Length / 2];
+                for(var i = 0; i < bytes.Length; i++) {
+                    bytes[i] = Convert.ToByte(Text.Substring(i * 2, 2), 16);
+                }
+                Text = Encoding.UTF8.GetString(bytes);
+            } catch { Text = "Hex string is not valid!"; }
         }
     }
 }
