@@ -19,7 +19,7 @@ namespace ReadMeLib.Readers {
         /// Admin reading all txt lines
         /// </summary>
         public override void ReadTxt() {
-           
+            Text = Text;
         }
 
         /// <summary>

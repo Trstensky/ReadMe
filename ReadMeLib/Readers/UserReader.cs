@@ -1,5 +1,6 @@
 ﻿using ReadMeLib.Readers.Base;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace ReadMeLib.Readers {
@@ -19,6 +20,8 @@ namespace ReadMeLib.Readers {
         /// User reading four txt lines
         /// </summary>
         public override void ReadTxt() {
+            var result = Text.Split('\n').Take(4).ToArray();
+            Text = string.Join("\n", result);
         }
 
         /// <summary>

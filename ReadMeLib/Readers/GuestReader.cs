@@ -1,6 +1,7 @@
 ﻿using ReadMeLib.Readers.Base;
 using System.IO;
 using System.Xml;
+using System.Linq;
 
 namespace ReadMeLib.Readers {
     /// <summary>
@@ -19,6 +20,8 @@ namespace ReadMeLib.Readers {
         /// Guest reading two txt lines
         /// </summary>
         public override void ReadTxt() {
+            var result = Text.Split('\n').Take(2).ToArray();
+            Text = string.Join("\n", result);
         }
 
         /// <summary>
